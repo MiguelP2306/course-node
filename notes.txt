@@ -1,0 +1,10 @@
+Event Loop: Un proceso con un bucle que gestiona de forma asincrona todos los eventos de tu aplicacion
+
+Los eventos llegan al event loop desde el event queue
+
+Event Queue: Contiene todo los eventos que se ejecutan en el codigo (una funcion, una exprecion, peticiones)
+
+El event loop los va a procesar, si puede resolverlo rapido lo hara, en caso de que no los manda al thread pool y aqui se gestiona de forma asincrona, mientras que el event loop se sigue ejecutando
+
+Thread Pool: Se encarga de gestionar los eventos de forma asincrona. Una vez terminado lo devuelve al Event Loop, el event loop vera si lo pasa al event queue o no
+

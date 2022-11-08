@@ -1,0 +1,19 @@
+ejecutamos npm init -y
+
+ejecutamos git init
+
+creamos nuestros archivos gitignore, eslintrc, editorconfig y index.js
+
+- ahora vamos a crear nuestros script dev, start y lint
+
+- ahora instalamos nuestras dependencias de desarrollo
+
+  npm i nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier -D
+
+- ahora vamos a instalar express
+
+  npm i express
+
+- ahora vamos a crear nuestro servidor en el index.js
+
+- para manejar las rutas
