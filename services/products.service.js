@@ -1,3 +1,5 @@
+const boom = require('@hapi/boom');
+
 class ProductsService {
   constructor() {
     this.products = [];
@@ -8,6 +10,7 @@ class ProductsService {
   }
 
   async find() {
+    this.getT();
     return this.products;
   }
 
@@ -15,7 +18,7 @@ class ProductsService {
     const product = this.products.filter(item => item.name.toLowerCase() === name.toLowerCase())
 
     if (product.length === 0) {
-      throw new Error('El producto no existe');
+      throw boom.notFound('Product not found');
     }
 
     return product;
