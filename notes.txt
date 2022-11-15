@@ -8,3 +8,45 @@ El event loop los va a procesar, si puede resolverlo rapido lo hara, en caso de 
 
 Thread Pool: Se encarga de gestionar los eventos de forma asincrona. Una vez terminado lo devuelve al Event Loop, el event loop vera si lo pasa al event queue o no
 
+
+
+DOCKER : {
+  Ejecutar docker
+    docker compose up
+    docker compose --env-file [dir_name_env] up -d
+
+    o
+
+    docker compose up [name_service] -d
+
+  Ver lo que esta corriendo
+    docker compose ps
+
+  Apagar todo
+    docker compose down
+
+  Los contenedores no tienen estados (stalesh) cada vez que se apaguen se pierde todo, para solucionar esto hacemos lo siguiente
+    agremos un volumen
+
+  Ver la bbdd que esta en docker
+    docker compose exec [name_service] bash
+
+  Luego para conectarnos a nuestra base de datos
+    psql -h localhost -d [DB_NAME] -U [DB_USER]
+
+  Comandos
+    \d+   : para saber la estructura de la bbdd
+    \q    : salir de la base de datos
+    exit  : salir del contenedor
+
+  Vamos a conectarnos con un motor grafico, usaremos pgadmin {
+    esto es una interfaz que podemos correr en el navegador, pero como estamos trabajando con docker podemos descargar la imagen de docker
+    https://hub.docker.com/r/dpage/pgadmin4
+  }
+
+  Una vez levantado el servicio de la interfaz nos podemos ir al puerto que se le configuro
+
+  Ahora tenemos que indicar a que servidor nos queremos conectar en pgadmin
+
+
+}
