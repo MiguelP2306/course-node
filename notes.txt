@@ -47,6 +47,13 @@ DOCKER : {
   Una vez levantado el servicio de la interfaz nos podemos ir al puerto que se le configuro
 
   Ahora tenemos que indicar a que servidor nos queremos conectar en pgadmin
+}
 
 
+ORM {
+  tenemos que instalar
+    npm i --save sequelize pg pg-hstore
+
+  la configuracion la hacemos en nuestra carpeta lib
+    sequelize.js
 }

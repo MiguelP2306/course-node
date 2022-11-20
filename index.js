@@ -12,7 +12,7 @@ const port = 3000;
 
 app.use(express.json());
 
-const whiteList = ['https://google.com'];
+const whiteList = ['http://localhost:3000'];
 const options = {
   origin: (origin, callback) => {
     if (whiteList.includes(origin)) {
@@ -22,9 +22,9 @@ const options = {
     }
   },
 };
-app.use(cors(options));
 
 routerApi(app);
+app.use(cors(options));
 
 app.use(logErrors);
 app.use(boomErrorHandler);

@@ -1,5 +1,5 @@
 const boom = require('@hapi/boom');
-
+const sequelize = require('../libs/sequelize');
 class ProductsService {
   constructor() {
     this.products = [];
@@ -10,8 +10,8 @@ class ProductsService {
   }
 
   async find() {
-    this.getT();
-    return this.products;
+    const [data] = await sequelize.query('SELECT * FROM tasks');
+    return data;
   }
 
   async findOne({ name }) {

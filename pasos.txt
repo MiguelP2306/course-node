@@ -17,3 +17,9 @@ creamos nuestros archivos gitignore, eslintrc, editorconfig y index.js
 - ahora vamos a crear nuestro servidor en el index.js
 
 - para manejar las rutas
+
+
+
+- levantar el proyecto
+  docker compose up -d postgres
+  npm run dev
