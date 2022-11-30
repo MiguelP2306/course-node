@@ -13,6 +13,8 @@ const sequelize = new Sequelize(URI, {
 });
 
 setupModels(sequelize);
-sequelize.sync();
+
+// esta funcion lee los modelos y se encarga de crear las tablas pero para produccion es peligroso porque necesitamos un sistema de migraciones
+// sequelize.sync();
 
 module.exports = sequelize;

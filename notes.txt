@@ -56,4 +56,52 @@ ORM {
 
   la configuracion la hacemos en nuestra carpeta lib
     sequelize.js
+
+  para trabajar con migraciones vamos a instalar
+    npm i sequelize-cli --save-dev
+
+  ahora tenemos que agregar un archivo de configuracion
+  /.sequelizerc
+
+    config → Dónde se encuentra la configuración, esta configuración se encuentra la conexión hacia la BD. El cli tiene su propia conexión, independientemente de la conexión de la aplicación porque esas conexiones corren a nivel de terminal.
+
+    models-paths → Dónde se encuentran los modelos.
+
+    migrations-paths → Dónde se encuentran las migraciones.
+
+    seeders-path → Dónde se encuentran las semillas de información, sirve mucho para pruebas unitarias, end to end, donde se necesitan semillas de información que es como cargar varios datos de información a la BD.
+
+  ahora vamos hacer un script para crear nuestras migraciones
+    "migrations:generate": "sequelize-cli migration:generate --name"
+
+    $ npm run migrations:generate create-user
+
+  esto nos crear un archivo en nuestra carpeta de migraciones
+
+  para correr nuestras migraciones tenemos que crear un script
+    "migrations:run": "sequelize-cli db:migrate"
+
+
+  anidar asociaciones
+    include: [
+      {
+        association: 'customer',
+        include: ['user']
+      }
+    ]
+
+  this.belongsToMany(models.Product, {
+    as: 'items',
+    through: models.OrderProduct,
+    foreignKey: 'orderId',
+    otherKey: 'productId',
+  })
+
+  paginacion
+    findAll({
+      include: [],
+      offset: 0,
+      limit: 10,
+    })
+
 }
